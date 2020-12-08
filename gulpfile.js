@@ -51,16 +51,18 @@ gulp.task('build', gulp.parallel('build:css', 'build:html', 'build:img'));
 
 // development server
 gulp.task('serve', function() {
-  gulp.series('build')
+  // build assets
+  gulp.series('build')();
 
+  // initialize developement server
   browserSync.init({
     server: './dist'
   });
 
+  // watch for changes
   gulp.watch('./src/img/*', gulp.series('build:img'));
   gulp.watch('./src/index.html', gulp.series('build:html'));
-  gulp.watch('./src/styles.css', gulp.series('build:css'));
-  gulp.watch('./tailwind.config.js', gulp.series('build:css'));
+  gulp.watch(['./src/styles.css', './tailwind.config.js'], gulp.series('build:css'));
 });
 
 // default task (serve)
