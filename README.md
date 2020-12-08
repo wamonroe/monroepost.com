@@ -23,5 +23,5 @@ Run `gulp build` and then copy all the files from `./dist` to the webhost.
 ## Files
 
 This very simple project expects only two files `./src/index.html` and `./src/styles.css`. Both of
-these files get compiled and/or minified during the build process. Any addition assets (such as
-images) should be placed directly in the `./dist` folder.
+these files get compiled and/or minified during the build process. Images are copied directly from
+`./src/img`.
