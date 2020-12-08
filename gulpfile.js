@@ -40,8 +40,14 @@ gulp.task('build:html', function() {
     }));
 });
 
+// copy images
+gulp.task('build:img', function() {
+  return gulp.src('./src/img/*')
+    .pipe(gulp.dest('./dist/img'));
+});
+
 // build css and html
-gulp.task('build', gulp.parallel('build:css', 'build:html'));
+gulp.task('build', gulp.parallel('build:css', 'build:html', 'build:img'));
 
 // development server
 gulp.task('serve', function() {
@@ -51,10 +57,11 @@ gulp.task('serve', function() {
     server: './dist'
   });
 
-  gulp.watch('./tailwind.config.js', gulp.series('build:css'));
-  gulp.watch('./src/styles.css', gulp.series('build:css'));
+  gulp.watch('./src/img/*', gulp.series('build:img'));
   gulp.watch('./src/index.html', gulp.series('build:html'));
+  gulp.watch('./src/styles.css', gulp.series('build:css'));
+  gulp.watch('./tailwind.config.js', gulp.series('build:css'));
 });
 
-// default task (build)
+// default task (serve)
 gulp.task('default', gulp.series('serve'));
