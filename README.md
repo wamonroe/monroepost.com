@@ -7,18 +7,18 @@ Simple landing page made with Tailwind CSS.
 To run the the development server:
 
 ```bash
-gulp serve
+npm run gulp
 ```
 
 To compile and minify CSS and HTML files:
 
 ```bash
-gulp build
+npm run gulp build
 ```
 
 ## Deploy
 
-Run `gulp build` and then copy all the files from `./dist` to the webhost.
+Run `npm run gulp build` and then copy all the files from `./dist` to the webhost.
 
 ## Files
 
