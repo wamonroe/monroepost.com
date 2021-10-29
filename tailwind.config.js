@@ -1,6 +1,9 @@
+const defaultConfig = require('tailwindcss/defaultConfig')
+
 module.exports = {
+  mode: 'jit',
   purge: [
-    './src/index.html'
+    'src/**/*.html'
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
