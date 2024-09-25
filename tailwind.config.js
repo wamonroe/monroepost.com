@@ -1,16 +1,8 @@
-const defaultConfig = require('tailwindcss/defaultConfig')
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  mode: 'jit',
-  purge: [
-    'src/**/*.html'
-  ],
-  darkMode: false, // or 'media' or 'class'
+  content: ["src/**/*.html"],
   theme: {
     extend: {},
   },
-  variants: {
-    extend: {},
-  },
   plugins: [],
-}
+};
