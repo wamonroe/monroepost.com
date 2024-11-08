@@ -4,14 +4,16 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "check-updates": "npx npm-check-updates",
+    "do-updates": "npx npm-check-updates -u"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.27",
+    "postcss": "^8.4.47",
     "postcss-import": "^16.1.0",
-    "postcss-preset-env": "^10.0.5",
-    "tailwindcss": "^3.4.13",
-    "vite": "^5.4.8"
+    "postcss-preset-env": "^10.0.9",
+    "tailwindcss": "^3.4.14",
+    "vite": "^5.4.10"
   }
 }
