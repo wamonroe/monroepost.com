@@ -1,18 +1,25 @@
 {
   "name": "tailwindcss-html-template",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
+    "lint": "eslint .",
     "check-updates": "npx npm-check-updates",
     "do-updates": "npx npm-check-updates -u"
   },
   "devDependencies": {
+    "@eslint/js": "^9.32.0",
     "@tailwindcss/postcss": "^4.1.11",
     "autoprefixer": "^10.4.21",
+    "eslint": "^9.32.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.3",
     "postcss": "^8.5.6",
     "postcss-preset-env": "^10.2.4",
+    "prettier": "^3.6.2",
     "tailwindcss": "^4.1.11",
     "vite": "^7.0.6"
   }
