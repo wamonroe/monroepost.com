@@ -1,13 +1,16 @@
-import pluginJs from "@eslint/js";
+import js from "@eslint/js";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
+import { defineConfig, globalIgnores } from "eslint/config";
 import globals from "globals";
 
-export default [
-  { files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"] },
-  { ignores: [".devbox/**/*", "node_modules/**/*", "dist/**/*"] },
-  { languageOptions: { globals: globals.browser } },
-  { settings: { react: { version: "detect" } } },
-  pluginJs.configs.recommended,
+export default defineConfig([
+  globalIgnores([".devbox/**/*", "node_modules/**/*", "dist/**/*"]),
+  {
+    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+    languageOptions: { globals: globals.browser },
+    settings: { react: { version: "detect" } }
+  },
+  js.configs.recommended,
   eslintPluginPrettierRecommended,
   {
     rules: {
@@ -22,4 +25,4 @@ export default [
       "react/react-in-jsx-scope": "off"
     }
   }
-];
+]);
