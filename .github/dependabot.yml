@@ -4,6 +4,8 @@ updates:
     directory: "/"
     schedule:
       interval: weekly
+    assignees:
+      - "wamonroe"
     groups:
       javascript:
         applies-to: version-updates
@@ -14,3 +16,5 @@ updates:
     directory: "/"
     schedule:
       interval: weekly
+    assignees:
+      - "wamonroe"
