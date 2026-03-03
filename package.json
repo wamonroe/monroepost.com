@@ -6,19 +6,22 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
+    "test": "vitest run",
     "lint": "eslint .",
     "check-updates": "npx npm-check-updates",
     "do-updates": "npx npm-check-updates -u"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.2",
+    "@eslint/js": "^10.0.1",
     "@tailwindcss/vite": "^4.2.1",
     "eslint": "^10.0.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
     "globals": "^17.4.0",
+    "happy-dom": "^20.8.3",
     "prettier": "^3.8.1",
-    "tailwindcss": "^4.1.18",
-    "vite": "^7.3.1"
+    "tailwindcss": "^4.2.1",
+    "vite": "^7.3.1",
+    "vitest": "^4.0.18"
   }
 }

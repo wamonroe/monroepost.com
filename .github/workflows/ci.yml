@@ -6,7 +6,7 @@ on:
     branches: [main]
 
 jobs:
-  audit_js:
+  test_js:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -18,5 +18,8 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
 
-      - name: Scan for security vulnerabilities in JavaScript dependencies
-        run: npm audit
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
