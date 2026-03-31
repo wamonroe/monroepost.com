@@ -7,9 +7,7 @@
     "build": "vite build",
     "serve": "vite preview",
     "test": "vitest run",
-    "lint": "eslint .",
-    "check-updates": "npx npm-check-updates",
-    "do-updates": "npx npm-check-updates -u"
+    "lint": "eslint ."
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
