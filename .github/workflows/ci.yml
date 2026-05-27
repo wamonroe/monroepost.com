@@ -5,6 +5,9 @@ on:
   push:
     branches: [main]
 
+env:
+  NPM_REGISTRY: ${{ secrets.NPM_REGISTRY }}
+
 jobs:
   test_js:
     runs-on: ubuntu-latest
