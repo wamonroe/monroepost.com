@@ -1,0 +1,37 @@
+name: Devbox Version Upgrade
+
+# Moves a package in .github/devbox-version-sync.json beyond its update policy
+# (e.g. Node.js 24 -> 26) in one pull request. The sync workflow opens an issue
+# when one is available. The logic lives in wamonroe/devbox-version-sync.
+
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: Devbox package to upgrade (as in .github/devbox-version-sync.json)
+        required: true
+        default: nodejs
+      version:
+        description: Version or release series to move to, e.g. "26". Leave blank for the newest Devbox offers.
+        required: false
+        default: ""
+
+concurrency:
+  group: devbox-version-sync
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  upgrade:
+    uses: wamonroe/devbox-version-sync/.github/workflows/upgrade.yml@v1
+    permissions:
+      contents: write
+      issues: read
+      pull-requests: write
+    with:
+      package: ${{ inputs.package }}
+      version: ${{ inputs.version }}
+      assignees: wamonroe
+    secrets:
+      token: ${{ secrets.DEVBOX_VERSION_SYNC_TOKEN }}
