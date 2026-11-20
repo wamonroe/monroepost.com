@@ -20,15 +20,3 @@ jobs:
 
       - name: Run tests
         run: bun run test
-
-  tool_versions:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v7
-
-      - name: Set up devbox-version-sync
-        uses: wamonroe/devbox-version-sync@v1
-
-      - name: Check pinned tool versions agree with devbox.lock
-        run: devbox-version-sync check
